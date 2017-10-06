@@ -1,5 +1,4 @@
 {% for glyph in glyphs %}
-  .{{ glyph.filename }} {
+  .{{ glyph.filename }}
     content: "\u{{ glyph.codepoint }}";
-  }
 {% endfor %}

@@ -1,23 +1,23 @@
-# gulp-iconfont-scss [![NPM version](https://badge.fury.io/js/gulp-iconfont.png)](https://npmjs.org/package/gulp-iconfont-scss) [![Build status](https://api.travis-ci.org/backflip/gulp-iconfont-scss.png)](https://travis-ci.org/backflip/gulp-iconfont-scss)
+# gulp-iconfont-sass
 > Create a CSS from fonts with [Gulp](http://gulpjs.com/).
 
 ## Usage
 
-First, install `gulp-iconfont-scss` as a development dependency:
+First, install `gulp-iconfont-sass` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-iconfont-scss
+npm install --save-dev gulp-iconfont-sass
 ```
 
 Then, add it to your `gulpfile.js`:
 
 ```javascript
 var iconfont = require('gulp-iconfont');
-var scss = require('gulp-iconfont-scss');
+var sass = require('gulp-iconfont-sass');
 
 gulp.task('Iconfont', function(){
   gulp.src(['assets/icons/*.svg'])
-    .pipe(scss({
+    .pipe(sass({
       
     })
     .pipe(iconfont({
@@ -28,13 +28,13 @@ gulp.task('Iconfont', function(){
 });
 ```
 
-`gulp-iconfont-scss` suits well with `gulp-iconfont` but you can use it in a
+`gulp-iconfont-sass` suits well with `gulp-iconfont` but you can use it in a
  more modular fashion by directly useing `gulp-svgicons2svgfont`,
  `gulp-svg2tff`, `gulp-ttf2eot` and/or `gulp-ttf2woff`.
 
 ## API
 
-### scss(options)
+### sass(options)
 
 #### options.template
 Type: `String`

@@ -1,17 +1,17 @@
 var fs = require('fs')
   , gutil = require('gulp-util')
-  , scss = require('../src/index')
+  , sass = require('../src/index')
   , assert = require('assert')
   , Stream = require('stream')
 ;
 
-describe('gulp-iconfont-scss', function() {
+describe('gulp-iconfont-sass', function() {
 
   it('should pass null files through', function(done) {
 
-    var stream = scss({
+    var stream = sass({
       filename: 'test',
-      template: 'icons.scss.swig'
+      template: 'icons.sass.swig'
     })
       , n = 0
       , fakeFile = new gutil.File({
@@ -54,9 +54,9 @@ describe('gulp-iconfont-scss', function() {
   describe('in buffer mode', function() {
 
     it('should work', function(done) {
-      var stream = scss({
+      var stream = sass({
         filename: 'test',
-        template: 'icons.scss.swig'
+        template: 'icons.sass.swig'
       })
         , n = 0
         , fakeFile = new gutil.File({
@@ -86,15 +86,13 @@ describe('gulp-iconfont-scss', function() {
           assert.equal(newFile.path, "/home/nfroidure/test/uE002-file2.svg");
         } else  {
           assert.equal(newFile.contents.toString('utf-8'), '\n\
-  .file {\n\
+  .file\n\
     content: "\\u57345";\n\
-  }\n\
 \n\
-  .file2 {\n\
+  .file2\n\
     content: "\\u57346";\n\
-  }\n\
 \n');
-          assert.equal(newFile.path, "/home/nfroidure/test/test.scss");
+          assert.equal(newFile.path, "/home/nfroidure/test/test.sass");
         }
       });
 
@@ -114,9 +112,9 @@ describe('gulp-iconfont-scss', function() {
   describe('in stream mode', function() {
 
     it('should work', function(done) {
-      var stream = scss({
+      var stream = sass({
         filename: 'test',
-        template: 'icons.scss.swig'
+        template: 'icons.sass.swig'
       })
         , n = 0
         , fakeFile = new gutil.File({
@@ -150,16 +148,14 @@ describe('gulp-iconfont-scss', function() {
           });
           newFile.contents.once('end', function(data) {
             assert.equal(contents.toString('utf-8'), '\n\
-  .file {\n\
+  .file\n\
     content: "\\u57345";\n\
-  }\n\
 \n\
-  .file2 {\n\
+  .file2\n\
     content: "\\u57346";\n\
-  }\n\
 \n');
           });
-          assert.equal(newFile.path, "/home/nfroidure/test/test.scss");
+          assert.equal(newFile.path, "/home/nfroidure/test/test.sass");
         }
       });
 

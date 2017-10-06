@@ -6,9 +6,9 @@ var path = require('path'),
 	fs = require('fs'),
 	Stream = require('stream');
 
-var PLUGIN_NAME  = 'gulp-iconfont-scss';
+var PLUGIN_NAME  = 'gulp-iconfont-sass';
 
-function iconfontSCSS(config) {
+function iconfontSASS(config) {
   var glyphMap = [], currentGlyph, stream, outputFile;
 
   // Checking config
@@ -35,7 +35,7 @@ function iconfontSCSS(config) {
       outputFile = new gutil.File({
         base: file.base,
         cwd: file.cwd,
-        path: path.join(file.base, config.filename + '.scss'),
+        path: path.join(file.base, config.filename + '.sass'),
         contents: file.isBuffer() ? new Buffer(0) : new Stream.PassThrough()
   		});
     }
@@ -80,4 +80,4 @@ function iconfontSCSS(config) {
   return stream;
 };
 
-module.exports = iconfontSCSS;
+module.exports = iconfontSASS;
