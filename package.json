@@ -22,5 +22,16 @@
   },
   "devDependencies": {
     "mocha": "~1.16.2"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelabomfim/gulp-iconfont-sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcelabomfim/gulp-iconfont-sass/issues"
+  },
+  "homepage": "https://github.com/marcelabomfim/gulp-iconfont-sass#readme"
 }
